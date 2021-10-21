@@ -1,5 +1,10 @@
 language: python
 python:
-  - "3.9.7"
+  - "3.9.0"
 services:
   - docker
+before_script: pip install docker-compose
+
+script: 
+  - docker-compose runn app "python manage.py test && flake8"
+
